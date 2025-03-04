@@ -13,4 +13,10 @@ public class UnitTest1
     {
         Assert.False(false);
     }
+    
+    [Fact]
+    public void LetsDoubleCheckMathStillWorks()
+    {
+        Assert.Equal(4, 2 + 2);
+    }
 }
