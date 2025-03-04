@@ -26,7 +26,7 @@ stages:
     - script: dotnet build --configuration Release
       displayName: 'Build projects'
 
-    - script: dotnet test DotNetCodeCoveragePipeline.Shared.Tests --configuration Release --logger trx
+    - script: dotnet test DotNetCodeCoveragePipeline.Shared.Tests --collect:"XPlat Code Coverage" --configuration Release --logger trx
       displayName: 'Run tests'
 
     - task: PublishTestResults@2
@@ -36,7 +36,7 @@ stages:
         testRunner: 'VSTest'
       displayName: 'Publish test results'
 
-    - task: PublishCodeCoverageResults@1
+    - task: PublishCodeCoverageResults@2
       inputs:
         codeCoverageTool: 'cobertura'
         summaryFileLocation: '$(Agent.TempDirectory)/**/coverage.cobertura.xml'
