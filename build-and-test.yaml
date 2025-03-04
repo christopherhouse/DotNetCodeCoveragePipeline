@@ -1,0 +1,43 @@
+# Create a pipeline that runs on commits to the main branch.
+# The pipeline should build all of the projects, then execute
+# the unit tests in the DotNetCodeCoveragePipeline.Shared.Tests
+# project.  The test results and code coverage results should be
+# published to the pipeline.  Use one stage and one job for this.
+# The pipeline should run on a hosted ubuntu agent and output
+# test results in JUnit format.
+trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+stages:
+- stage: BuildAndTest
+  jobs:
+  - job: BuildAndTest
+    steps:
+    - task: UseDotNet@2
+      inputs:
+        version: '8.x'
+      displayName: 'Install .NET Core SDK'
+
+    - script: dotnet build --configuration Release
+      displayName: 'Build projects'
+
+    - script: dotnet test DotNetCodeCoveragePipeline.Shared.Tests --configuration Release --logger trx
+      displayName: 'Run tests'
+
+    - task: PublishTestResults@2
+      inputs:
+        testResultsFiles: '**/*.trx'
+        testRunTitle: 'Unit tests'
+        testRunner: 'VSTest'
+      displayName: 'Publish test results'
+
+    - task: PublishCodeCoverageResults@1
+      inputs:
+        codeCoverageTool: 'cobertura'
+        summaryFileLocation: '$(Agent.TempDirectory)/**/coverage.cobertura.xml'
+      displayName: 'Publish code coverage results'
