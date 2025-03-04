@@ -39,5 +39,5 @@ stages:
     - task: PublishCodeCoverageResults@2
       inputs:
         codeCoverageTool: 'cobertura'
-        summaryFileLocation: '$(Common.TestResultsDirectory)/**/coverage.cobertura.xml'
+        summaryFileLocation: '$(System.DefaultWorkingDirectory)/DotNetCodeCoveragePipeline.Shared.Tests/TestResults/**/coverage.cobertura.xml'
       displayName: 'Publish code coverage results'
