@@ -19,4 +19,10 @@ public class UnitTest1
     {
         Assert.Equal(4, 2 + 2);
     }
+
+    [Fact]
+    public void IsMultiplicationEvenRealQuestionMark()
+    {
+        Assert.True(1*2 == 2);
+    }
 }
