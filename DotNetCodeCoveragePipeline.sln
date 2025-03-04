@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCodeCoveragePipeline", "DotNetCodeCoveragePipeline\DotNetCodeCoveragePipeline.csproj", "{70667FDE-BCF8-4DC4-AC9B-21467C33522B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCodeCoveragePipeline.Shared", "DotNetCodeCoveragePipeline.Shared\DotNetCodeCoveragePipeline.Shared.csproj", "{A04D1645-B57D-47AB-A063-2562B83C404A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCodeCoveragePipeline.Shared.Tests", "DotNetCodeCoveragePipeline.Shared.Tests\DotNetCodeCoveragePipeline.Shared.Tests.csproj", "{B179A4C1-3A02-44CC-91F2-B3D433FF6D3A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{70667FDE-BCF8-4DC4-AC9B-21467C33522B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70667FDE-BCF8-4DC4-AC9B-21467C33522B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70667FDE-BCF8-4DC4-AC9B-21467C33522B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A04D1645-B57D-47AB-A063-2562B83C404A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A04D1645-B57D-47AB-A063-2562B83C404A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A04D1645-B57D-47AB-A063-2562B83C404A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A04D1645-B57D-47AB-A063-2562B83C404A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B179A4C1-3A02-44CC-91F2-B3D433FF6D3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B179A4C1-3A02-44CC-91F2-B3D433FF6D3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B179A4C1-3A02-44CC-91F2-B3D433FF6D3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B179A4C1-3A02-44CC-91F2-B3D433FF6D3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
